@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Webpage Using JavaScript</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            text-align:center;
+            background:#f4f4f4;
+            margin-top:40px;
+        }
+
+        .container{
+            width:450px;
+            margin:auto;
+            padding:20px;
+            background:white;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            margin:8px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #message{
+            font-size:20px;
+            color:green;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        #clock{
+            color:red;
+            font-size:18px;
+            margin-top:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Dynamic Webpage Using JavaScript</h1>
+
+<p>Enter your details below.</p>
+
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<br>
+
+<input type="number" id="age" placeholder="Enter Your Age">
+
+<br>
+
+<button onclick="showMessage()">Submit</button>
+
+<button onclick="changeColor()">Change Background</button>
+
+<button onclick="showDateTime()">Show Date & Time</button>
+
+<div id="message"></div>
+
+<div id="clock"></div>
+
+</div>
+
+<script>
+
+function showMessage(){
+
+    var name=document.getElementById("name").value;
+    var age=document.getElementById("age").value;
+
+    if(name=="" || age==""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    document.getElementById("message").innerHTML=
+    "Welcome <b>"+name+"</b>! Your age is <b>"+age+"</b>.";
+
+}
+
+function changeColor(){
+
+    var colors=["lightblue","lightgreen","lightyellow","pink","lavender","orange"];
+
+    var random=Math.floor(Math.random()*colors.length);
+
+    document.body.style.backgroundColor=colors[random];
+
+}
+
+function showDateTime(){
+
+    var today=new Date();
+
+    document.getElementById("clock").innerHTML=
+    "Current Date & Time : "+today;
+
+}
+
+</script>
+
+</body>
+</html>

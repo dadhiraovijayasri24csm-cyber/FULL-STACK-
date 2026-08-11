@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canteen</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 30px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        h3 {
+            color: brown;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        #display {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #ccc;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        function showItems(category) {
+            let items = "";
+
+            if (category === "tiffins") {
+                items = `
+                    <h3>Tiffins</h3>
+                    <ul>
+                        <li>Idly</li>
+                        <li>Poori</li>
+                        <li>Dosa</li>
+                        <li>Upma</li>
+                        <li>Vada</li>
+                    </ul>
+                `;
+            }
+            else if (category === "lunch") {
+                items = `
+                    <h3>Lunch</h3>
+                    <ul>
+                        <li>Veg Meals</li>
+                        <li>Chicken Biryani</li>
+                        <li>Fried Rice</li>
+                        <li>Curd Rice</li>
+                        <li>Paneer Curry</li>
+                    </ul>
+                `;
+            }
+            else if (category === "snacks") {
+                items = `
+                    <h3>Snacks</h3>
+                    <ul>
+                        <li>Samosa</li>
+                        <li>Puffs</li>
+                        <li>Mirchi Bajji</li>
+                        <li>French Fries</li>
+                        <li>Sandwich</li>
+                    </ul>
+                `;
+            }
+
+            document.getElementById("display").innerHTML = items;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>CANTEEN</h1>
+
+    <h2>Welcome to Canteen</h2>
+
+    <h3>Items Available</h3>
+
+    <button onclick="showItems('tiffins')">Tiffins</button>
+    <button onclick="showItems('lunch')">Lunch</button>
+    <button onclick="showItems('snacks')">Snacks</button>
+
+    <div id="display">
+        <p>Click on a category to view the items.</p>
+    </div>
+
+</body>
+</html>
